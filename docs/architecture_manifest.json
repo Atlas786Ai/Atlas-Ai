@@ -1,0 +1,912 @@
+{
+  "architecture": "Atlas",
+  "boot_sequence": [
+    [
+      "ConfigurationRepository",
+      "LoggingRepository",
+      "SecurityRepository",
+      "AuditRepository"
+    ],
+    [
+      "RuntimeRepository",
+      "EventBus"
+    ],
+    [
+      "IdentityRepository",
+      "MissionRepository",
+      "KnowledgeRepository",
+      "MemoryRepository",
+      "CognitiveContextRepository"
+    ],
+    [
+      "ReasoningRepository",
+      "PlanningRepository",
+      "DecisionRepository",
+      "PredictionRepository",
+      "SimulationRepository"
+    ],
+    [
+      "PortfolioRepository",
+      "MarketRepository",
+      "RiskRepository",
+      "AnalyticsRepository",
+      "MonitoringRepository",
+      "RecoveryRepository",
+      "ExecutionRepository"
+    ]
+  ],
+  "repositories": [
+    {
+      "event_types": [
+        "IdentityCreated",
+        "IdentityLoaded",
+        "IdentitySaved",
+        "IdentityValidated",
+        "IdentityArchived"
+      ],
+      "name": "IdentityRepository",
+      "package": "atlas.identity",
+      "public_interfaces": [
+        "create_identity",
+        "load_identity",
+        "save_identity",
+        "validate_identity",
+        "archive_identity",
+        "get_identity",
+        "identity_exists"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "identity",
+      "slug": "identity"
+    },
+    {
+      "event_types": [
+        "MissionCreated",
+        "MissionLoaded",
+        "MissionSaved",
+        "MissionValidated",
+        "MissionArchived"
+      ],
+      "name": "MissionRepository",
+      "package": "atlas.mission",
+      "public_interfaces": [
+        "create_mission",
+        "load_mission",
+        "save_mission",
+        "validate_mission",
+        "archive_mission",
+        "get_current_mission",
+        "mission_exists",
+        "get_mission_version"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "mission",
+      "slug": "mission"
+    },
+    {
+      "event_types": [
+        "AddKnowledge",
+        "UpdateKnowledge",
+        "RemoveKnowledge",
+        "GetKnowledge",
+        "Search"
+      ],
+      "name": "KnowledgeRepository",
+      "package": "atlas.knowledge",
+      "public_interfaces": [
+        "add_knowledge",
+        "update_knowledge",
+        "remove_knowledge",
+        "get_knowledge",
+        "search",
+        "semantic_search",
+        "list_related",
+        "validate_knowledge",
+        "archive_knowledge"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "knowledge",
+      "slug": "knowledge"
+    },
+    {
+      "event_types": [
+        "StoreMemory",
+        "UpdateMemory",
+        "GetMemory",
+        "SearchMemory",
+        "ContextualRecall"
+      ],
+      "name": "MemoryRepository",
+      "package": "atlas.memory",
+      "public_interfaces": [
+        "store_memory",
+        "update_memory",
+        "get_memory",
+        "search_memory",
+        "contextual_recall",
+        "archive_memory",
+        "delete_memory",
+        "validate_memory"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "memory",
+      "slug": "memory"
+    },
+    {
+      "event_types": [
+        "BuildContext",
+        "LoadContext",
+        "ValidateContext",
+        "ArchiveContext",
+        "GetContext"
+      ],
+      "name": "CognitiveContextRepository",
+      "package": "atlas.cognitive_context",
+      "public_interfaces": [
+        "build_context",
+        "load_context",
+        "validate_context",
+        "archive_context",
+        "get_context",
+        "context_exists"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "cognitive_context",
+      "slug": "cognitive_context"
+    },
+    {
+      "event_types": [
+        "Reason",
+        "GenerateHypotheses",
+        "EvaluateHypotheses",
+        "RankCandidates",
+        "ValidateReasoning"
+      ],
+      "name": "ReasoningRepository",
+      "package": "atlas.reasoning",
+      "public_interfaces": [
+        "reason",
+        "generate_hypotheses",
+        "evaluate_hypotheses",
+        "rank_candidates",
+        "validate_reasoning",
+        "archive_reasoning",
+        "load_reasoning"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "reasoning",
+      "slug": "reasoning"
+    },
+    {
+      "event_types": [
+        "CreatePlan",
+        "LoadPlan",
+        "ValidatePlan",
+        "OptimizePlan",
+        "EstimateResources"
+      ],
+      "name": "PlanningRepository",
+      "package": "atlas.planning",
+      "public_interfaces": [
+        "create_plan",
+        "load_plan",
+        "validate_plan",
+        "optimize_plan",
+        "estimate_resources",
+        "archive_plan",
+        "get_plan"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "planning",
+      "slug": "planning"
+    },
+    {
+      "event_types": [
+        "EvaluateDecision",
+        "SelectPlan",
+        "ValidateDecision",
+        "ArchiveDecision",
+        "LoadDecision"
+      ],
+      "name": "DecisionRepository",
+      "package": "atlas.decision",
+      "public_interfaces": [
+        "evaluate_decision",
+        "select_plan",
+        "validate_decision",
+        "archive_decision",
+        "load_decision",
+        "get_decision"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "decision",
+      "slug": "decision"
+    },
+    {
+      "event_types": [
+        "CreatePrediction",
+        "LoadPrediction",
+        "ValidatePrediction",
+        "ComparePrediction",
+        "ArchivePrediction"
+      ],
+      "name": "PredictionRepository",
+      "package": "atlas.prediction",
+      "public_interfaces": [
+        "create_prediction",
+        "load_prediction",
+        "validate_prediction",
+        "compare_prediction",
+        "archive_prediction",
+        "get_prediction",
+        "list_predictions"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "prediction",
+      "slug": "prediction"
+    },
+    {
+      "event_types": [
+        "CreateSimulation",
+        "RunSimulation",
+        "StopSimulation",
+        "ArchiveSimulation",
+        "GetSimulation"
+      ],
+      "name": "SimulationRepository",
+      "package": "atlas.simulation",
+      "public_interfaces": [
+        "create_simulation",
+        "run_simulation",
+        "stop_simulation",
+        "archive_simulation",
+        "get_simulation",
+        "compare_simulations",
+        "validate_simulation"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "simulation",
+      "slug": "simulation"
+    },
+    {
+      "event_types": [
+        "Execute",
+        "PauseExecution",
+        "ResumeExecution",
+        "CancelExecution",
+        "RollbackExecution"
+      ],
+      "name": "ExecutionRepository",
+      "package": "atlas.execution",
+      "public_interfaces": [
+        "execute",
+        "pause_execution",
+        "resume_execution",
+        "cancel_execution",
+        "rollback_execution",
+        "get_execution",
+        "validate_execution"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "execution",
+      "slug": "execution"
+    },
+    {
+      "event_types": [
+        "CreatePortfolio",
+        "LoadPortfolio",
+        "SavePortfolio",
+        "UpdatePosition",
+        "RemovePosition"
+      ],
+      "name": "PortfolioRepository",
+      "package": "atlas.portfolio",
+      "public_interfaces": [
+        "create_portfolio",
+        "load_portfolio",
+        "save_portfolio",
+        "update_position",
+        "remove_position",
+        "validate_portfolio",
+        "archive_portfolio",
+        "get_portfolio",
+        "portfolio_exists"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "portfolio",
+      "slug": "portfolio"
+    },
+    {
+      "event_types": [
+        "LoadMarketSnapshot",
+        "SaveMarketSnapshot",
+        "GetMarketData",
+        "ListAssets",
+        "ValidateMarketData"
+      ],
+      "name": "MarketRepository",
+      "package": "atlas.market",
+      "public_interfaces": [
+        "load_market_snapshot",
+        "save_market_snapshot",
+        "get_market_data",
+        "list_assets",
+        "validate_market_data",
+        "archive_market_snapshot",
+        "market_available"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "market",
+      "slug": "market"
+    },
+    {
+      "event_types": [
+        "CalculateRisk",
+        "GetRisk",
+        "ValidateRisk",
+        "ArchiveRisk",
+        "RiskAvailable"
+      ],
+      "name": "RiskRepository",
+      "package": "atlas.risk",
+      "public_interfaces": [
+        "calculate_risk",
+        "get_risk",
+        "validate_risk",
+        "archive_risk",
+        "risk_available",
+        "load_risk_snapshot"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "risk",
+      "slug": "risk"
+    },
+    {
+      "event_types": [
+        "CalculateMetrics",
+        "GenerateReport",
+        "GenerateDashboard",
+        "LoadAnalytics",
+        "ArchiveAnalytics"
+      ],
+      "name": "AnalyticsRepository",
+      "package": "atlas.analytics",
+      "public_interfaces": [
+        "calculate_metrics",
+        "generate_report",
+        "generate_dashboard",
+        "load_analytics",
+        "archive_analytics",
+        "validate_analytics",
+        "get_statistics"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "analytics",
+      "slug": "analytics"
+    },
+    {
+      "event_types": [
+        "CollectMetrics",
+        "GetHealth",
+        "GetStatus",
+        "GenerateAlert",
+        "ArchiveMonitoring"
+      ],
+      "name": "MonitoringRepository",
+      "package": "atlas.monitoring",
+      "public_interfaces": [
+        "collect_metrics",
+        "get_health",
+        "get_status",
+        "generate_alert",
+        "archive_monitoring",
+        "validate_monitoring",
+        "load_snapshot"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "monitoring",
+      "slug": "monitoring"
+    },
+    {
+      "event_types": [
+        "Recover",
+        "Rollback",
+        "RestoreSnapshot",
+        "RestartWorkflow",
+        "ValidateRecovery"
+      ],
+      "name": "RecoveryRepository",
+      "package": "atlas.recovery",
+      "public_interfaces": [
+        "recover",
+        "rollback",
+        "restore_snapshot",
+        "restart_workflow",
+        "validate_recovery",
+        "archive_recovery",
+        "get_recovery"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "recovery",
+      "slug": "recovery"
+    },
+    {
+      "event_types": [
+        "AuditEventRecorded",
+        "AuditEventLoaded",
+        "AuditValidated",
+        "AuditArchived",
+        "AuditTraceLoaded"
+      ],
+      "name": "AuditRepository",
+      "package": "atlas.audit",
+      "public_interfaces": [
+        "record_event",
+        "load_event",
+        "search_events",
+        "validate_audit",
+        "archive_audit",
+        "get_trace",
+        "audit_available"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "audit",
+      "slug": "audit"
+    },
+    {
+      "event_types": [
+        "AuthenticationValidated",
+        "AuthorizationEvaluated",
+        "SignatureVerified",
+        "PermissionValidated",
+        "PolicyValidated",
+        "SecurityEventArchived"
+      ],
+      "name": "SecurityRepository",
+      "package": "atlas.security",
+      "public_interfaces": [
+        "authenticate",
+        "authorize",
+        "verify_signature",
+        "validate_permission",
+        "validate_policy",
+        "archive_security_event",
+        "get_security_status"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "security",
+      "slug": "security"
+    },
+    {
+      "event_types": [
+        "RuntimeStarted",
+        "RuntimeShutdown",
+        "RuntimeRestarted",
+        "RuntimeValidated",
+        "RuntimeStateArchived",
+        "TaskScheduled"
+      ],
+      "name": "RuntimeRepository",
+      "package": "atlas.runtime",
+      "public_interfaces": [
+        "start_runtime",
+        "shutdown_runtime",
+        "restart_runtime",
+        "get_runtime_state",
+        "schedule_task",
+        "validate_runtime",
+        "archive_runtime_state"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "runtime",
+      "slug": "runtime"
+    },
+    {
+      "event_types": [
+        "ConfigurationLoaded",
+        "ConfigurationUpdated",
+        "ConfigurationValidated",
+        "ConfigurationArchived",
+        "ConfigurationReloaded"
+      ],
+      "name": "ConfigurationRepository",
+      "package": "atlas.configuration",
+      "public_interfaces": [
+        "load_configuration",
+        "save_configuration",
+        "validate_configuration",
+        "get_configuration",
+        "reload_configuration",
+        "archive_configuration",
+        "configuration_exists"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "configuration",
+      "slug": "configuration"
+    },
+    {
+      "event_types": [
+        "LogCreated",
+        "LogArchived",
+        "LogRejected"
+      ],
+      "name": "LoggingRepository",
+      "package": "atlas.logging",
+      "public_interfaces": [
+        "log",
+        "debug",
+        "info",
+        "warning",
+        "error",
+        "critical",
+        "archive_logs",
+        "load_logs"
+      ],
+      "required_modules": [
+        "__init__",
+        "config",
+        "constants",
+        "events",
+        "exceptions",
+        "health",
+        "interfaces",
+        "mappers",
+        "metrics",
+        "models",
+        "schemas",
+        "serializers",
+        "services",
+        "validators",
+        "version"
+      ],
+      "root_anchor": "logging",
+      "slug": "logging"
+    }
+  ],
+  "repository_count": 22,
+  "rules": [
+    "one_repository_owns_one_domain",
+    "public_interfaces_or_event_bus_only",
+    "immutable_boundary_objects",
+    "deterministic_import_paths",
+    "runtime_registration_required"
+  ],
+  "status": "frozen",
+  "version": "1.0.0"
+}
