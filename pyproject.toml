@@ -1,0 +1,9 @@
+[project]
+name = "atlas-ai"
+version = "1.0.0"
+description = "Frozen Atlas v1.0 implementation scaffold"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

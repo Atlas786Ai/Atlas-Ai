@@ -1,0 +1,9 @@
+"""Event names emitted by MissionRepository."""
+
+MISSION_CREATED = "MissionCreated"
+MISSION_LOADED = "MissionLoaded"
+MISSION_SAVED = "MissionSaved"
+MISSION_VALIDATED = "MissionValidated"
+MISSION_ARCHIVED = "MissionArchived"
+
+EVENT_TYPES = (MISSION_CREATED, MISSION_LOADED, MISSION_SAVED, MISSION_VALIDATED, MISSION_ARCHIVED)

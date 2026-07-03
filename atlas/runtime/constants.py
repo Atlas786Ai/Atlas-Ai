@@ -1,0 +1,10 @@
+"""Constants for RuntimeRepository."""
+
+REPOSITORY_NAME = "RuntimeRepository"
+REPOSITORY_VERSION = "1.0.0"
+RUNTIME_STOPPED = "Stopped"
+RUNTIME_RUNNING = "Running"
+RUNTIME_RESTARTING = "Restarting"
+RUNTIME_SHUTTING_DOWN = "ShuttingDown"
+TASK_PENDING = "Pending"
+TASK_SCHEDULED = "Scheduled"
