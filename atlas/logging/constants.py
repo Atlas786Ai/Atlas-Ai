@@ -1,4 +1,13 @@
 """Constants for LoggingRepository."""
 
-REPOSITORY_NAME = "LoggingRepository"
-REPOSITORY_VERSION = "1.0.0"
+ALLOWED_LOG_LEVELS = ("DEBUG", "INFO", "NOTICE", "WARNING", "ERROR", "CRITICAL")
+SENSITIVE_CONTEXT_KEYS = (
+    "api_key",
+    "authorization",
+    "credential",
+    "password",
+    "private_key",
+    "secret",
+    "token",
+)
+REDACTED_VALUE = "[REDACTED]"
